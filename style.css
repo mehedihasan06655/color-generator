@@ -1,0 +1,71 @@
+#root {
+  background-color: #000000;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  flex-direction: column;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-size: 50px;
+}
+#generator-btn {
+  padding: 1rem;
+  font-size: 30px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+#input,
+#copyBtn {
+  font-size: 20px;
+  background-color: #ffffff;
+  padding: 10px;
+}
+#copyBtn {
+  cursor: pointer;
+  padding: 10px 30px;
+}
+.toastBtn {
+  border: 1px solid #ffffff;
+  background-color: chocolate;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  z-index: 999;
+  position: fixed;
+  right: 2rem;
+  top: 2rem;
+}
+.animation-slide-in {
+  animation: animation-in 0.5s ease-in;
+}
+.animation-slide-out {
+  animation: animation-out 0.5s ease-in;
+}
+
+@keyframes animation-in {
+  from {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes animation-out {
+  from {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+}
