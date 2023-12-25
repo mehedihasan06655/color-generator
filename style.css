@@ -14,6 +14,21 @@
 h1 {
   font-size: 50px;
 }
+.input-group{
+  position: relative;
+}
+.hash{
+  position: absolute;
+  background-color: bisque;
+  color: #000000;
+  padding: 9px 5px;
+  font-size: 24px;
+  font-weight: 600;
+  display: block;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+
+}
 #generator-btn {
   padding: 1rem;
   font-size: 30px;
@@ -24,7 +39,7 @@ h1 {
 #copyBtn {
   font-size: 20px;
   background-color: #ffffff;
-  padding: 10px;
+  padding: 10px 20px 10px 20px;
 }
 #copyBtn {
   cursor: pointer;

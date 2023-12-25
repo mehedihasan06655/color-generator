@@ -7,16 +7,17 @@ let div = null;
 
 changeBtn.addEventListener("click", function () {
   const generator = colorGenerator();
-  root.style.backgroundColor = generator;
+  root.style.backgroundColor = `#${generator}`;
   input.value = generator;
   copyBtn.addEventListener("click", function () {
-    navigator.clipboard.writeText(generator);
+    navigator.clipboard.writeText(`#${generator}`);
     if (div !== null) {
       div.remove();
       div = null;
     }
+    // const reHash = input.value.substring(1)
     if (isValidCode(input.value)) {
-      toast(`${input.value} copied`);
+      toast(`#${input.value} copied`);
     } else {
       alert("Please provide a valid code");
     }
@@ -43,16 +44,14 @@ function toast(msg) {
 
 input.addEventListener("keyup", function (e) {
   const color = e.target.value;
+  console.log(color)
   if (color && isValidCode(color)) {
-    root.style.backgroundColor = color;
+    root.style.backgroundColor = `#${color}`;
   }
 });
 
 function isValidCode(color) {
-  if (color.length !== 7) return false;
-  if (color[0] !== "#") return false;
-
-  color = color.substring(1);
+  if (color.length !== 6) return false;
   return /^[0-9A-Fa-f]{6}$/i.test(color);
 }
 
@@ -60,5 +59,5 @@ function colorGenerator() {
   const red = Math.floor(Math.random() * 255);
   const green = Math.floor(Math.random() * 255);
   const blue = Math.floor(Math.random() * 255);
-  return `#${red.toString(16)}${green.toString(16)}${blue.toString(16)}`;
+  return `${red.toString(16)}${green.toString(16)}${blue.toString(16)}`;
 }
